@@ -1,0 +1,153 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ch.hszt.hs_2010.mdp.HGHM</groupId>
+	<artifactId>HGHM</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>HGHM :: Maven HGHM Ultimate</name>
+	<description><![CDATA[Maven HGHM Ultimate]]></description>
+	<version>1.0.0</version>
+
+    <scm>
+        <connection>scm:git:git@github.com:chubbson/MDP_Project_HGHM.git</connection>
+        <url>scm:git:git@github.com:chubbson/MDP_Project_HGHM.git</url>
+    </scm>
+
+	<organization>
+		<name>HGHM HSZT</name>
+		<url>https://github.com/chubbson/MDP_Project_HGHM/wiki</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>dhauri</id>
+			<name>David Hauri</name>
+			<organization>KittyCorp</organization>
+			<organizationUrl>https://github.com/chubbson/MDP_Project_HGHM/wiki</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>RGamma</id>
+			<name>Ramon Gamma</name>
+			<organization></organization>
+			<organizationUrl>https://github.com/chubbson/MDP_Project_HGHM/wiki</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>SMarcin</id>
+			<name>Simon Marcin</name>
+			<organization></organization>
+			<organizationUrl>https://github.com/chubbson/MDP_Project_HGHM/wiki</organizationUrl>
+			<roles>
+				<role>developer</role>
+				<role>Customer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>PHomberg</id>
+			<name>Pascal Homberger</name>
+			<organization></organization>
+			<organizationUrl>https://github.com/chubbson/MDP_Project_HGHM/wiki</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<slf4j.version>1.5.11</slf4j.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.1.2</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>project-team</report>
+							<report>cim</report>
+							<report>scm</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.5.11</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.5.11</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Test Dependencies -->
+
+	    <dependency>
+	      <groupId>org.jmock</groupId>
+	      <artifactId>jmock-junit4</artifactId>
+	      <version>2.5.1</version>
+	      <scope>test</scope>
+	    </dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<inherited>true</inherited>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
