@@ -50,12 +50,11 @@ Um alle umgebungs Files und Ressourcen zu laden muss in dem Ordner wo sich das p
 Hier liegt das pom.xml
 > mvn install
 Maven lädt nun alle fehlenden jars die im Projekt benötigt werden runter, 
-Probiert das Programm zu compilieren, 
-Und führt gleich alle Unit Tests aus. 
+probiert das Programm zu compilieren und führt gleich alle Unit Tests aus. 
 
 >mvn test
 Führt nur die Unit Tests aus
 
 >mvn exec:java -Dexec.mainClass=ch.hszt.hs_2010.mdp.HGHM.RunHello 
-Füht die Main Klasse aus der Klasse RunHello aus. 
+Füht die Main Methode aus der Klasse RunHello aus. 
 
