@@ -1,0 +1,107 @@
+Willkommen auf dem HGHM Wiki 
+
+Hier handelt es sich um ein kleines Schulprojekt im Rahmen von des Faches 'Methoden der Programmierung' an der HSZ-T
+
+Es soll ein Projekt simuliert werden, mit Projektplanung, Zeitschätzung, Iterationsplan, Burndown Diagramm etc. 
+Nachwelchem implementiert werden soll. 
+Nach dieser Projektplanung, wird dieses Projekt aufgegleist und programmiert, jedoch muss im Rahmen des Unterrichts und Selbststudiums nicht fertig gestellt werden. 
+
+Dozenten 
+- Beat Seeliger
+- Basil Moser
+- 
+
+Gruppe
+- David Hauri
+- Ramon Gamma
+- Pascal Homberger
+- Simon Marcin 
+
+
+- Gathering Requirements
+
+Sachverhalt: 
+Die System Administratoren von Alstom haben das Problem, dass sie innerhalb ihres Netzwerkes ca 250 Firewalls haben, die jetzt manuell überprüft werden müssen, wenn ein Zugriffsproblem auftreten sollte. Diese müssen die Administratoren innert kürzester Zeit verifizieren und bestimmen welche Firewall das Problem verursacht, sprich welche Konfiguration untersucht werden muss. 
+Bis anhin wurde dafür ein Traceroute ausgeführt, welcher anhand der Hops die dazwischenliegenden Firewalls identifiziert werden konnten. 
+
+Deadline: KW3 2011!!
+
+Lösung / Kundenwunsch: 
+GUI
+Das GUI sollte 4 Eingabefelder haben (Maximum Timeout, Maximum Hops, IP Adresse, Kompletter Trace). Die ersten 3 müssen ausgefüllt sein um einen Trace von seiner Maschine zu starten und diesen dann zu überprüfen. Oder man kopiert einen Trace in das grosse Feld und lässt diesen überprüfen. Hier sollte man also eine Überprüfung einbauen.
+
+Tracert
+Das Tooll sollte einen Traceroute ausführenen können, sowie sollte man auch Traceroutes in das tool kopieren können. Es darf nur auf die IPs achten, da der DNS Name wechseln könnte.
+
+Auswerten
+Die IPs werden überprüft ob sie einem Interface einer Firewall angehören. Nach der Überprüfung sollte eine Ausgabe erscheinen mit den Firewalls oder mit einer Information, dass keine Firewall gefunden wurde.
+
+Einlesen
+Die 250 Firewallconfig sollten Eingelesen werden und die Interface IPs dem Tool übergeben werden. Wenn möglich sollten die ganzen Subnetze überprüft werden und nicht nur die Interface IPs. Falls eine Firewall keine Antwort gibt auf einen Traceroute.
+
+
+
+User Stories
+GUI
+- Eingabefelder
+- Prüfung der Eingaben
+- Actions
+
+Tracert
+- Implementierung 
+- Einlesen externer Tracert 
+- Daten aufbereiten/Splitten 
+
+Auswerten
+- IP's Prüfen
+- Ausgabe
+
+Einelsen
+- Firewalls
+- IP/Subnetze berechnen
+- HashMap mit Config inizialisieren
+
+Projekt begleitend allgemein 
+- Testdaten erstellen
+- Testdriven first, JUnit test erstellen der zu implementierenden Klassen
+
+
+
+
+
+
+Beschreibung:
+Anhand der vom Kunden vorliegenden Beschreibung bestehen noch Unklarheiten, welche mit dem Kunden erst Abgeklärt werden müssen. Dieser ist leider erst ca am Montag wieder zur Verfügung steht. Was zur folge hat, dass die User Strories grundlegend geändert werden müssen. Es wurden trotzdem Userstories erfasst, welche sprachlich noch nicht verifiziert sondern nur grob in Tasks gesplittet wurden. Um ein provisorischen Zeitplan, Iterationsplan und dazugehöriges Burndown Diagramm vorbereiten zu können.
+
+
+
+Weiteres Vorgehen: 2.12.10
+Bluesky - Potential requirements
+In Usersprache verfasst
+- Titel 
+- Description 
+
+Validation der Userstories mit dem Kunden
+Solange Userstories ändern, bis alle dem Kunden und selber klar sind. 
+
+Stories in Requiremens/Tasks aufsplitten 
+- Was muss alles im Task berücksichtigt werden. 
+- Planningpoker der einzelnen Tasks, Zeitschätzung 
+- Userstory nicht > 15 Tage sonst splitten
+
+Get the total estimate
+- Summe der einzelnen stories. 
+
+What Customer wants! 
+Till KW3
+
+Umfang 'Userstories/Tasks' kürzen, bis der Zeitaufwand realistisch erscheint. 
+
+Iterationsplan erstellen. 
+
+Priorisieren
+ 
+Implementireen
+
+
+
