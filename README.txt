@@ -13,16 +13,32 @@ Um Lokaler Ordner auf ein bestehendes Repo zu verlinken
   git remote add origin git@github.com:chubbson/MDP_Project_HGHM.git
   git push origin master
 
-Dateien Adden, add auf lokale neue date
-  git add TESTFILE.txt 
-für alle dateien im aktuellen verzeichnis mit '.'
-  git add . 
+Um zusammen auf einem Repo arbeiten zu können, könnt ihr ein bestehendes Repo clonen. 
+  cd collaborating git Repo
+  git clone git@github.com:chubbson/MDP_Project_HGHM.git
 
-Um es dann lokal zu versionieren 
+Dateien Adden, add auf lokale neue datei ausführen
+  git add TESTFILE.txt 
+somit ist das TESTFILE getrackt, mit add müssen alle files die ihr tracken mit einem eigenen add tracken. 
+  wollt ihr ein File trotzdem nich tracken, könnt ihr es aus der list mit checkout wieder rausnehmen
+  git checkout TESTFILE.txt
+Habt ihr viele dateien zum Tracken un möchtet ihr diese am liebsten in separaten Commits einchecken, könnt ihr auch ein gui zur hilfe nehmen. 
+  git gui 
+Oeffnet ein Gui mitwelchem ihr alle geänderten daten per 'Click auf das Datei Icon' Tracken könnt, Diese erscheinen dann im unteren Feld. 
+Ein solche vorgang ist stellvertretende für ein add. 
+Mit einem Klick auf das icon der Dateien in der unteren Liste lassen siech diese wieder untracken, was einem checkout entspricht. 
+
+Um es dann lokal zu versionieren verwendet man den Befehl commit um alle getrackten daten einzuchecken, den kommentar mit -m nicht vergessen! 
   git commit -m 'Irgend ein Kommentar, beschreibt was geändert hat'
 
-Um es ins Repo in github zu verfügung zu stellen
+Um es im Repo in github zu verfügung zu stellen
   git push origin master 
+
+Um zu prüfen ob man auf dem aktuellsten stand von Github ist, kann man gitk ausführen. Es erscheint ein tolles Fenster welches dir den History tree ausgibt mit der aktuellen Rev nr etc. 
+  gitk
+
+Inkl allen Branches
+  gitk --all
 
 Um Aktuelle daten aus dem git auszuchecken 
   git pull origin master 
@@ -36,6 +52,7 @@ Maven:
 - Java Version:
 Java- Installtation prüfen, mind 1.5 oder 1.6!!
 > java -version
+Nicht vergessen das die JAVA_HOME umgebungsvariable welches auf das jdk verweisst gesetzt ist. 
 
 - Maven Installation 
 Aktuelle version runterladen von http://maven.apache.org/download.html
