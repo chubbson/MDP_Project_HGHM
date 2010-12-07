@@ -14,13 +14,18 @@ Um Lokaler Ordner auf ein bestehendes Repo zu verlinken
   git push origin master
 
 Dateien Adden, add auf lokale neue date
-  git add TESTFILE.txt
+  git add TESTFILE.txt 
+für alle dateien im aktuellen verzeichnis mit '.'
+  git add . 
 
 Um es dann lokal zu versionieren 
   git commit -m 'Irgend ein Kommentar, beschreibt was geändert hat'
 
 Um es ins Repo in github zu verfügung zu stellen
   git push origin master 
+
+Um Aktuelle daten aus dem git auszuchecken 
+  git pull origin master 
 
 Im masterbranch sollte nichts eingecheckt werden was nicht fertig, oder sauber entwickelt wurde. Sprich, CodeStyle eingehalten? CodeDokumentation vorhanden? UnitTest dafür geschrieben? 
 
