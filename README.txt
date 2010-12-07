@@ -17,7 +17,7 @@ Um zusammen auf einem Repo arbeiten zu können, könnt ihr ein bestehendes Repo 
   cd collaborating git Repo
   git clone git@github.com:chubbson/MDP_Project_HGHM.git
 
-Dateien Adden, add auf lokale neue datei ausführen
+Dateien Adden, add auf lokale neue datei ausführen, muss nach jeder änderung von den Files ausgeführt werden, damit diese für ein commit getrackt werden
   git add TESTFILE.txt 
 somit ist das TESTFILE getrackt, mit add müssen alle files die ihr tracken mit einem eigenen add tracken. 
   wollt ihr ein File trotzdem nich tracken, könnt ihr es aus der list mit checkout wieder rausnehmen
@@ -30,6 +30,9 @@ Mit einem Klick auf das icon der Dateien in der unteren Liste lassen siech diese
 
 Um es dann lokal zu versionieren verwendet man den Befehl commit um alle getrackten daten einzuchecken, den kommentar mit -m nicht vergessen! 
   git commit -m 'Irgend ein Kommentar, beschreibt was geändert hat'
+
+Um zu sehen welche files geändert wurden und welche files getrackt sind, kann man den status abrufen.
+  git status
 
 Um es im Repo in github zu verfügung zu stellen
   git push origin master 
