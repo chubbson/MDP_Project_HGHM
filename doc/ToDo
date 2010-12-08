@@ -1,5 +1,12 @@
 Willkommen auf dem HGHM Wiki 
 
+Die System Administratoren von Alstom haben das Problem, dass sie innerhalb ihres Netzwerkes ca 250 Firewalls haben. Wenn nun ein Mitarbeiter aus Indien einen Server nicht erreichen kann, ruft er einen Systemadministrator in der Alstom Schweiz an. Er erklärt, dass er keinen Zugriff auf einen Server hat und führt lokal einen Traceroute aus und schickt dem Administrator seinen Tracerout. Der Administrator muss nun alle IP's aus dem bekommenen Trace prüfen welche sich um firmen interne Firewall handelt.
+
+Nun möchte er ein Tool, mit welchem er automatisch ein Traceroute ausführen kann und angezeigt bekommt, welcher der IPs zwischen ihm und dem Zielserver, es sich um eine Firewall handelt. Zusätzlich möchte er den Tracerout des internen Kunden eingeben können und auch nach internen Firewalls prüfen. 
+Die internen Firewalls von seinem eigenen Tracerout und dem Tracerout des Kunden sollen dann dargestellt werden. Somit ist dem System Administrator bekannt, welche Firewalls er Prüfen muss. 
+Die System Administratoren, geben ein Configfile vor mit allen eingetragenen Internen Firewalls. 
+
+
 Hier handelt es sich um ein kleines Schulprojekt im Rahmen von des Faches 'Methoden der Programmierung' an der HSZ-T
 
 Es soll ein Projekt simuliert werden, mit Projektplanung, Zeitschätzung, Iterationsplan, Burndown Diagramm etc. 
