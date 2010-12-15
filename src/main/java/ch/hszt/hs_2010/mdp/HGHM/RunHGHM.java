@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 
 
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AbstractController;
+import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Model.Model;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.View.IViewStrategy;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.View.ViewStrategyFactory;
@@ -22,11 +23,14 @@ public class RunHGHM {
 		try {
 			showInfo();
 			int strategyNo = getStrategyNo();
-			AbstractController controller = ViewStrategyFactory.getController();
+			Model model = new Model();
+			Controller controller = new Controller();
 			IViewStrategy v = ViewStrategyFactory.getStrategy(strategyNo);
+			v.setController(controller);
 			controller.addView(v);
-			controller.addModel(new Model());
-			v.showIP("sdf");
+			controller.addModel(model);
+			model.initDefault();
+			v.showIP();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
