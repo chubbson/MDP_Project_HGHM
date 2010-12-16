@@ -1,6 +1,8 @@
-package ch.hszt.hs_2010.mdp.HGHM;
+package test.java.ch.hszt.hs_2010.mdp.HalloWorld;
 
 import static org.junit.Assert.assertEquals;
+
+import main.java.ch.hszt.hs_2010.mdp.HalloWorld.Hello;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,7 +10,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ch.hszt.hs_2010.mdp.HGHM.Hello;
 
 /**
  * @author david

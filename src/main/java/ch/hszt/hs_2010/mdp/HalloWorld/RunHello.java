@@ -1,4 +1,4 @@
-package ch.hszt.hs_2010.mdp.HGHM;
+package main.java.ch.hszt.hs_2010.mdp.HalloWorld;
 
 public class RunHello {
 	public static void main(String[] args) {
