@@ -1,0 +1,72 @@
+################################################################
+Trace from Switzerland to DMz France
+****************************************************************
+D:\Documents and Settings\e_smarci>tracert -w 100 10.239.3.41
+
+Tracing route to 10.239.3.41 over a maximum of 30 hops
+
+  1    <1 ms    <1 ms    <1 ms  10.128.101.2
+  2    <1 ms    <1 ms    <1 ms  10.128.0.41
+  3    <1 ms    <1 ms    <1 ms  10.238.4.34
+  4    <1 ms    <1 ms    <1 ms  10.238.4.82
+  5     1 ms     1 ms    <1 ms  32.39.152.81
+  6     *        *        *     Request timed out.
+  7    15 ms    15 ms    15 ms  10.239.3.133
+  8    16 ms    15 ms    15 ms  10.239.3.17
+  9    15 ms    16 ms    16 ms  10.239.3.41
+
+Trace complete.
+
+
+
+################################################################
+Trace from Switzerland to DMz France
+****************************************************************
+
+Will follow.
+
+
+
+
+################################################################
+Trace from WLAn HSZ-T to Internet
+****************************************************************
+C:\Users\Simon>tracert www.google.ch
+
+Tracing route to www.l.google.com [74.125.232.114]
+over a maximum of 30 hops:
+
+  1     1 ms     1 ms    <1 ms  gateway-wlan.hsz-t.ch [192.168.0.1]
+  2     1 ms     1 ms     1 ms  gw-zi-vdsl.hsz-t.ch [192.168.10.2]
+  3     6 ms     1 ms     1 ms  vdsl-router.hsz-t.ch [192.168.14.1]
+  4   501 ms     *        *     132-242-3-213.bluewin.ch [213.3.242.132]
+  5     *        *        *     Request timed out.
+  6     *        *        *     Request timed out.
+  7     *        *        *     Request timed out.
+  8     *        *        *     Request timed out.
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
