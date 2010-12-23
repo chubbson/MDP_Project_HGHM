@@ -2,6 +2,7 @@ package main.java.ch.hszt.hs_2010.mdp.HGHM.View.Console;
 
 import java.beans.PropertyChangeEvent;
 
+import main.java.ch.hszt.hs_2010.mdp.HGHM.Common;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AbstractController;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.View.IViewStrategy;
@@ -22,6 +23,7 @@ public class ViewConsoleStrategy implements IViewStrategy{
 	 * Note: If an instance would be used by the ViewStrategyFactory, a controller should be set once. 
 	 */
 	public ViewConsoleStrategy(){
+		System.out.println(Common.APPLICATION_NAME);
 	}
 	
 	/**
@@ -29,15 +31,8 @@ public class ViewConsoleStrategy implements IViewStrategy{
 	 * @param controller
 	 */
 	public ViewConsoleStrategy(Controller controller) {
+		this();
 		this.controller = controller;
-	}
-	
-	/**
-	 * This function shows current HostIp
-	 */
-	@Override
-	public void showIP() {
-		System.out.println(getHostIp());
 	}
 
     /**
@@ -56,18 +51,57 @@ public class ViewConsoleStrategy implements IViewStrategy{
 			if (getHostIp() == null || !getHostIp().equals(newStringValue))
                 setHostIp(newStringValue);
 		}
-		//Further vars will be handled here
-/*		else if 
-			(evt.getPropertyName().equals(
-      			DefaultController.ELEMENT_FONT_PROPERTY)) {
-			Font f = (Font)evt.getNewValue();
-			String fontString = f.getFontName() + " " + f.getSize();
-			font.setText(fontString);
-			currentFont = f;
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.REQUEST_QUIT_PROPERTY)) {
+			boolean newBoolValue = ((java.lang.Boolean)(evt.getNewValue()));
+			if (newBoolValue)
+			{
+				showShutDown();
+			}
 		}
-*/		
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.REQUEST_TRACEROUTE_PROPERTY)) {
+			boolean newBoolValue = ((java.lang.Boolean)(evt.getNewValue()));
+			if (newBoolValue)
+			{
+				showStartTrace();
+			}
+		}
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.RESPONSE_TRACEROUTE_PROPERTY)) {
+			String newTraceRouteResponse = evt.getNewValue().toString();
+			if (newTraceRouteResponse != null)
+			{
+				showTraceResponse();
+			}
+		}
 	}
 	
+	/**
+	 * Shows trace route response
+	 */
+	private void showTraceResponse() {
+		//
+		System.out.println("Trace route sequence finished");
+	}
+
+	/**
+	 * Shows starting trace sequence
+	 */
+	private void showStartTrace() {
+		System.out.println("Starting trace route sequence ...");
+	}
+
+	/**
+	 * Shows shutting down request in console
+	 */
+	private void showShutDown() {
+		System.out.println(Common.APPLICATION_NAME + " is shutting down ...");
+	}
+
 	/**
 	 * Sets local view stored hostIp
 	 * @param hostIp
@@ -75,6 +109,7 @@ public class ViewConsoleStrategy implements IViewStrategy{
 	private void setHostIp(String hostIp)
 	{
 		this.hostIp = hostIp; 
+		System.out.println("Host IP: " + hostIp);
 	}
 
 	/**
