@@ -111,4 +111,8 @@ Priorisieren
 Implementireen
 
 
+Patterns
+Die Guigrundstruktur wurde mit Hilfe von Design-Patterns aufgebaut. 
+Die Gui Funktionalität handled das MVC Pattern. 
+In einem Strategy werden alle verfügbaren views gehalten, welches mithilfe eines Factory abgerufen werden können. 
 
