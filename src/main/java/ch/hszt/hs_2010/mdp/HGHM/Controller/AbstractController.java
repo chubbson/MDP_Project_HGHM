@@ -104,6 +104,7 @@ public abstract class AbstractController implements PropertyChangeListener {
                 method.invoke(model, newValue);
 
             } catch (Exception ex) {
+            	System.out.println("setModelProperty Exception: " + ex.toString());
                 //  Handle exception.
             }
         }

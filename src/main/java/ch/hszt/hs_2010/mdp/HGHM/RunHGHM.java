@@ -21,40 +21,42 @@ public class RunHGHM {
 	private void run()
 	{
 		try {
-			showInfo();
-			int strategyNo = getStrategyNo();
+			//showInfo();
+			//int strategyNo = getStrategyNo();
 			Model model = new Model();
 			Controller controller = new Controller();
-			IViewStrategy v = ViewStrategyFactory.getStrategy(strategyNo);
-			v.setController(controller);
-			controller.addView(v);
+			IViewStrategy viewGui = ViewStrategyFactory.getGuiStrategy();
+			IViewStrategy viewConsole = ViewStrategyFactory.getConsoleStrategy();
+			viewGui.setController(controller);
+			viewConsole.setController(controller);
+			controller.addView(viewConsole);
+			controller.addView(viewGui);
 			controller.addModel(model);
 			model.initDefault();
-			v.showIP();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
 	}
 	
-	/** retrieves a strategy no from the user */
-	private int getStrategyNo() throws IOException {
-		System.out.print("Choose view #: ");
-		String s = readLn();
-		return Integer.parseInt(s);
-	}
-
-	/** reads a line from stdin */
-	private String readLn() throws IOException {
-		 InputStreamReader input = new InputStreamReader(System.in);
-		 BufferedReader reader = new BufferedReader(input);
-	     return reader.readLine(); 
-	}
-	
-	/** 
-	 * shows program info an available options 
-	 */
-	private void showInfo() {
-		System.out.println("\n***** Available views *******\n");
-		System.out.println(ViewStrategyFactory.getDescription());		
-	}
+//	/** retrieves a strategy no from the user */
+//	private int getStrategyNo() throws IOException {
+//		System.out.print("Choose view #: ");
+//		String s = readLn();
+//		return Integer.parseInt(s);
+//	}
+//
+//	/** reads a line from stdin */
+//	private String readLn() throws IOException {
+//		 InputStreamReader input = new InputStreamReader(System.in);
+//		 BufferedReader reader = new BufferedReader(input);
+//	     return reader.readLine(); 
+//	}
+//	
+//	/** 
+//	 * shows program info an available options 
+//	 */
+//	private void showInfo() {
+//		System.out.println("\n***** Available views *******\n");
+//		System.out.println(ViewStrategyFactory.getDescription());		
+//	}
 }

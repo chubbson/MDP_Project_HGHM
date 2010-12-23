@@ -10,10 +10,6 @@ import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AbstractController;
  */
 
 public interface IViewStrategy {
-	/** 
-	 * shows ip 
-	 */
-	public void showIP();
 	
 	/**
 	 * Each view should have this function to add a controller to the view

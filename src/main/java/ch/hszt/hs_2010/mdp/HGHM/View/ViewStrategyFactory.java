@@ -30,6 +30,16 @@ public class ViewStrategyFactory {
 		return strategies.get(id);
 	}
 	
+	public static IViewStrategy getConsoleStrategy()
+	{
+		return strategies.get(0);
+	}
+	
+	public static IViewStrategy getGuiStrategy()
+	{
+		return strategies.get(1);
+	}
+	
 	/** 
 	 * adds a new view strategy
 	 * instantiates strategy and adds it to description
