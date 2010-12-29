@@ -52,7 +52,6 @@ public class LoadFirewall {
 		
 		String[] temp = line.split("/");
 		FirewallMap.put(temp[0], temp[2]);
-		System.out.println(temp[0] + "  " + temp[2]);
 	}	
 
 	/**
