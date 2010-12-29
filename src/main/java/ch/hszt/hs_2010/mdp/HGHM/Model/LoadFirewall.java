@@ -16,6 +16,10 @@ public class LoadFirewall {
 	private String configPath;
 	private HashMap <String,String> FirewallMap;
 
+	public LoadFirewall() {
+		this.ConfigToHash(); 
+	}
+	
 	/**
 	 * Creates the HashMap and Reader
 	 * Reads also the config file line by line
@@ -50,7 +54,7 @@ public class LoadFirewall {
 		FirewallMap.put(temp[0], temp[2]);
 		System.out.println(temp[0] + "  " + temp[2]);
 	}	
-	
+
 	/**
 	 * Gets the Hashmap with IP and Firewall name
 	 * @return HashMap
