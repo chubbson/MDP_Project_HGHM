@@ -15,6 +15,7 @@ import javax.swing.*;
 
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Common;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AbstractController;
+import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AnalyzeTrace;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.View.IViewStrategy;
 
@@ -124,6 +125,11 @@ public class ViewGuiStrategy implements IViewStrategy{
             	btnStartTraceActionPerformed(evt);
             }
 		});
+		btnAnalyzeTrace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	btnAnalyzeTraceActionPerformed(evt);
+            }
+		});
 	}
 	
 	/**
@@ -178,6 +184,24 @@ public class ViewGuiStrategy implements IViewStrategy{
         }
     }
 
+	/**
+	 * Event Function, happens if an action perform on ipField
+	 * @param evt
+	 */
+    private void btnAnalyzeTraceActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+        	System.out.println("Tracefield value: " + taTraceField.getText());
+        	AnalyzeTrace analyzeTrace = new AnalyzeTrace();
+        	this.showResult(analyzeTrace.Analyze(taTraceField.getText()));
+        } catch (Exception e) {
+            //  Handle exception ...... NOT!!
+        }
+    }
+    
+    public void showResult(String string){
+    	JOptionPane.showMessageDialog(null, string, "Test Titel", JOptionPane.OK_CANCEL_OPTION);
+    }
+    
 	/**
 	 * Event Function, happens if an action perform on ipField
 	 * @param evt
