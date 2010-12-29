@@ -70,7 +70,6 @@ public class ViewGuiStrategy implements IViewStrategy{
 		btnStartTrace = new JButton();
 		taTraceField = new JTextArea();
 		
-		
 		pnlMain.setLayout(new FlowLayout(FlowLayout.LEFT));
 		
 		lblDesc.setText("IP:");
