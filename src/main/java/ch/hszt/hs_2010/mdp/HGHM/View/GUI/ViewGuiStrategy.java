@@ -28,10 +28,12 @@ public class ViewGuiStrategy implements IViewStrategy{
 
 	private JFrame frameMain;
 	private JPanel pnlMain;
+	private JPanel pnlBottom;
 	private JScrollPane pnTraceField;
 	private JTextField tfHostIp;
 	private JLabel lblDesc;
 	private JButton btnStartTrace;
+	private JButton btnAnalyzeTrace;
 	private JTextArea taTraceField;
 	
 	private Controller controller; 
@@ -64,29 +66,35 @@ public class ViewGuiStrategy implements IViewStrategy{
 		});
 		createMenuBar();
 		pnlMain = new JPanel();
-		
+		pnlBottom = new JPanel();
 		lblDesc = new JLabel();
 		tfHostIp = new JTextField(20);
 		btnStartTrace = new JButton();
+		btnAnalyzeTrace = new JButton();
 		taTraceField = new JTextArea();
 		
 		
 		pnlMain.setLayout(new FlowLayout(FlowLayout.LEFT));
+		pnlBottom.setLayout(new FlowLayout(FlowLayout.LEFT));
 		
 		lblDesc.setText("IP:");
 		tfHostIp.setText("0.0.0.0");
 		btnStartTrace.setText("Traceroute starten");
+		btnAnalyzeTrace.setText("Analyze Traceroute");
 		//taTraceField.setText(Common.DEFAULT_TRACEROUTE);
 		
 		pnlMain.add(lblDesc);
 		pnlMain.add(tfHostIp);
 		pnlMain.add(btnStartTrace);
 		
+		pnlBottom.add(btnAnalyzeTrace);
+		
 		pnTraceField = new JScrollPane(taTraceField);
 		pnTraceField.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		
 		frameMain.add(BorderLayout.NORTH, pnlMain);
 		frameMain.add(pnTraceField);
+		frameMain.add(BorderLayout.SOUTH,btnAnalyzeTrace);
 		frameMain.setSize(500, 500);
 		frameMain.setResizable(false);
 		
