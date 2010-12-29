@@ -26,7 +26,7 @@ public abstract class AbstractModel
     
     /**
      * Adds a property change listener to the observer list.
-     * @param l The property change listener
+     * @param listener The property change listener
      */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
@@ -34,7 +34,7 @@ public abstract class AbstractModel
 
     /**
      * Removes a property change listener from the observer list.
-     * @param l The property change listener
+     * @param listener The property change listener
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
@@ -50,6 +50,4 @@ public abstract class AbstractModel
     protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
         propertyChangeSupport.firePropertyChange(propertyName, oldValue, newValue);
     }
-
-
 }
