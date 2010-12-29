@@ -78,6 +78,15 @@ public class ViewConsoleStrategy implements IViewStrategy{
 				showTraceResponse();
 			}
 		}
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.RESPONSE_MATCHIP_PROPERTY)) {
+//			String newTraceRouteResponse = evt.getNewValue().toString();
+//			if (newTraceRouteResponse != null)
+//			{
+//				showTraceResponse();
+//			}
+		}
 	}
 	
 	/**

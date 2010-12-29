@@ -14,6 +14,8 @@ public class Controller extends AbstractController {
 	public static final String REQUEST_QUIT_PROPERTY = "QuitRequest";
 	public static final String REQUEST_TRACEROUTE_PROPERTY = "StartTraceRequest";
 	public static final String RESPONSE_TRACEROUTE_PROPERTY = "TraceRouteResponse";
+	public static final String RESPONSE_MATCHIP_PROPERTY = "MatchIpResponse";
+	public static final String REQUEST_MATCHIP_PROPERTY = "MatchIpRequest";
 	
 	/**
      * Change the element hostIp value in the model

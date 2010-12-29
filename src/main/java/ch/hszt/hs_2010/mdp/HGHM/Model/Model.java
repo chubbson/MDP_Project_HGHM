@@ -12,6 +12,7 @@ import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
  */
 public class Model extends AbstractModel {
 	private String hostIP;
+	private HashMap<String, String> matchIp;
 	private boolean quitRequest = false;
 	private boolean startTraceRequest = false;
 	private String startTraceRouteString = "";
@@ -79,4 +80,17 @@ public class Model extends AbstractModel {
 		firePropertyChange(Controller.RESPONSE_TRACEROUTE_PROPERTY, TraceResponset, Common.DEFAULT_TRACEROUTE);
 	}
 	
+	private void showMatchIp(HashMap<String, String> hmIp)
+	{
+		HashMap<String, String> oldMatchIp = this.matchIp;
+		this.matchIp = hmIp;
+		firePropertyChange(Controller.RESPONSE_MATCHIP_PROPERTY, oldMatchIp, this.matchIp);
+	}
+	
+	public void setMatchIpRequest()
+	{
+		firePropertyChange(Controller.REQUEST_MATCHIP_PROPERTY, false, true);
+		//get MatchIp 
+		showMatchIp(new HashMap<String, String>());
+	}
 }

@@ -60,6 +60,5 @@ public class ViewStrategyFactory {
 	 */
 	public static String getDescription() {
 		return description;
-		
 	}
 }
