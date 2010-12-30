@@ -87,13 +87,40 @@ public class ViewConsoleStrategy implements IViewStrategy{
 //				showTraceResponse();
 //			}
 		}
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.REQUEST_ANALYZETRACE_PROPERTY)) {
+			boolean newTraceAnalyzeRequest = ((java.lang.Boolean)(evt.getNewValue()));
+			if (newTraceAnalyzeRequest)
+			{
+				showAnalyzeTrace();
+			}
+		}
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.RESPONSE_ANALYZETRACE_PROPERTY)) {
+			String newTraceAnalyzeResponse = evt.getNewValue().toString();
+			if (newTraceAnalyzeResponse != null)
+			{
+				showAnalyzeTraceResponse(newTraceAnalyzeResponse);
+			}
+		}
 	}
 	
+	private void showAnalyzeTraceResponse(String newTraceAnalyzeResponse) {
+		System.out.println("Tracerout analyze result:");
+		System.out.println(newTraceAnalyzeResponse);
+		System.out.println("Finished analyzing tracerout");
+	}
+
+	private void showAnalyzeTrace() {
+		System.out.println("Start analyzing tracerout");
+	}
+
 	/**
 	 * Shows trace route response
 	 */
 	private void showTraceResponse() {
-		//
 		System.out.println("Trace route sequence finished");
 	}
 

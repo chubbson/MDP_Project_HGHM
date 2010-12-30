@@ -190,9 +190,7 @@ public class ViewGuiStrategy implements IViewStrategy{
 	 */
     private void btnAnalyzeTraceActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-        	System.out.println("Tracefield value: " + taTraceField.getText());
-        	AnalyzeTrace analyzeTrace = new AnalyzeTrace();
-        	this.showResult(analyzeTrace.Analyze(taTraceField.getText()));
+        	controller.requestTraceAnalyze();
         } catch (Exception e) {
             //  Handle exception ...... NOT!!
         }
@@ -304,6 +302,15 @@ public class ViewGuiStrategy implements IViewStrategy{
 			if (newTraceRouteResponse != null)
 			{
 				showTraceResponse(newTraceRouteResponse);
+			}
+		}	
+			else if 
+			(evt.getPropertyName().equals(
+	  			Controller.RESPONSE_ANALYZETRACE_PROPERTY)) {
+			String newAnalyzeTraceResponse = evt.getNewValue().toString();
+			if (newAnalyzeTraceResponse != null)
+			{
+				showResult(newAnalyzeTraceResponse);
 			}
 		}
 		//Further vars will be handled here

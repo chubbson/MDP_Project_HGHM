@@ -3,6 +3,7 @@ package main.java.ch.hszt.hs_2010.mdp.HGHM.Model;
 import java.util.HashMap;
 
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Common;
+import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AnalyzeTrace;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
 
 /**
@@ -15,7 +16,9 @@ public class Model extends AbstractModel {
 	private HashMap<String, String> matchIp;
 	private boolean quitRequest = false;
 	private boolean startTraceRequest = false;
-	private String startTraceRouteString = "";
+	private boolean analyzeTraceRequest = false;
+	private String traceRouteString = "";
+	private String analyzedTraceResult = ""; 
 
 	/**
      * Provides the means to set or reset the model to
@@ -46,7 +49,7 @@ public class Model extends AbstractModel {
 	}
 	            
 	/**
-	 * Set a quit Request and exit after fireing requestProperty back to controller the application
+	 * Set a quit Request and exit after firing requestProperty back to controller the application
 	 * @param quitRequest
 	 */
 	public void setQuitRequest(java.lang.Boolean quitRequest)
@@ -76,8 +79,9 @@ public class Model extends AbstractModel {
 	 */
 	public void setTraceRouteResponse()
 	{
-		String TraceResponset = "";
-		firePropertyChange(Controller.RESPONSE_TRACEROUTE_PROPERTY, TraceResponset, Common.DEFAULT_TRACEROUTE);
+		String oldTraceRoute = this.traceRouteString;
+		traceRouteString = Common.DEFAULT_TRACEROUTE;
+		firePropertyChange(Controller.RESPONSE_TRACEROUTE_PROPERTY, oldTraceRoute, traceRouteString);
 	}
 	
 	private void showMatchIp(HashMap<String, String> hmIp)
@@ -93,4 +97,24 @@ public class Model extends AbstractModel {
 		//get MatchIp 
 		showMatchIp(new HashMap<String, String>());
 	}
+	
+	public void setAnalyzeTraceRequest(java.lang.Boolean analyzeTraceRequest)
+	{
+		boolean oldAnalyzeTraceRequest = this.analyzeTraceRequest;
+		this.analyzeTraceRequest = analyzeTraceRequest;
+		firePropertyChange(Controller.REQUEST_ANALYZETRACE_PROPERTY, oldAnalyzeTraceRequest, this.analyzeTraceRequest);
+		//starting Traceroute
+		setAnalyzeTraceResponse();
+	}
+	
+	public void setAnalyzeTraceResponse()
+	{
+		AnalyzeTrace analyzeTrace = new AnalyzeTrace();
+		String oldAnalyzeResult = this.analyzedTraceResult;
+		this.analyzedTraceResult = analyzeTrace.Analyze(traceRouteString);
+		firePropertyChange(Controller.RESPONSE_ANALYZETRACE_PROPERTY, oldAnalyzeResult, this.analyzedTraceResult);
+	}
+	
+//	AnalyzeTrace analyzeTrace = new AnalyzeTrace();
+//	this.showResult(analyzeTrace.Analyze(taTraceField.getText()));
 }
