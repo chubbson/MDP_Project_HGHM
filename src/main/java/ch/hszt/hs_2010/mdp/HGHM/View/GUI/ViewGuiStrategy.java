@@ -9,13 +9,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
-import java.util.HashMap;
-
 import javax.swing.*;
 
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Common;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AbstractController;
-import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AnalyzeTrace;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.View.IViewStrategy;
 
@@ -304,7 +301,7 @@ public class ViewGuiStrategy implements IViewStrategy{
 				showTraceResponse(newTraceRouteResponse);
 			}
 		}	
-			else if 
+		else if 
 			(evt.getPropertyName().equals(
 	  			Controller.RESPONSE_ANALYZETRACE_PROPERTY)) {
 			String newAnalyzeTraceResponse = evt.getNewValue().toString();

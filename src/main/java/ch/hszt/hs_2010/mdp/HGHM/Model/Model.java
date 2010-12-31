@@ -3,7 +3,7 @@ package main.java.ch.hszt.hs_2010.mdp.HGHM.Model;
 import java.util.HashMap;
 
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Common;
-import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.AnalyzeTrace;
+import main.java.ch.hszt.hs_2010.mdp.HGHM.Model.AnalyzeTrace;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Controller.Controller;
 
 /**
@@ -109,9 +109,8 @@ public class Model extends AbstractModel {
 	
 	public void setAnalyzeTraceResponse()
 	{
-		AnalyzeTrace analyzeTrace = new AnalyzeTrace();
 		String oldAnalyzeResult = this.analyzedTraceResult;
-		this.analyzedTraceResult = analyzeTrace.Analyze(traceRouteString);
+		this.analyzedTraceResult = AnalyzeTrace.Analyze(traceRouteString);
 		firePropertyChange(Controller.RESPONSE_ANALYZETRACE_PROPERTY, oldAnalyzeResult, this.analyzedTraceResult);
 	}
 	

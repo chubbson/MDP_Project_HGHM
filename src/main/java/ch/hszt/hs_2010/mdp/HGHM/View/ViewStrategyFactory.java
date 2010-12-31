@@ -44,6 +44,7 @@ public class ViewStrategyFactory {
 	 * adds a new view strategy
 	 * instantiates strategy and adds it to description
 	 */
+	@SuppressWarnings("unchecked")
 	public static void addStrategy(Class clazz) {
 		try {
 			IViewStrategy tmpViewStrategy = (IViewStrategy) clazz.newInstance();

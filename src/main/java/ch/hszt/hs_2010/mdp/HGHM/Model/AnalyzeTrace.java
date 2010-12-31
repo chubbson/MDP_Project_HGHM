@@ -1,4 +1,4 @@
-package main.java.ch.hszt.hs_2010.mdp.HGHM.Controller;
+package main.java.ch.hszt.hs_2010.mdp.HGHM.Model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,19 +9,17 @@ import java.util.regex.Pattern;
 import main.java.ch.hszt.hs_2010.mdp.HGHM.Model.LoadFirewall;
 
 public class AnalyzeTrace {
-	private String result = "";
-	private ArrayList<String> strArr;
 
-	public String Analyze(String string){
+	public static String Analyze(String string){
 		ArrayList<String> strArr = ExtractIpFromTrace(string);
 		return CompareIps(strArr);
 	}
 
-	public ArrayList<String> ExtractIpFromTrace(String TraceRouteValue){
+	private static ArrayList<String> ExtractIpFromTrace(String TraceRouteValue){
 		String patternStr = "\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b";
 		Pattern pattern = Pattern.compile(patternStr);
 		Matcher matcher = pattern.matcher(TraceRouteValue);
-		strArr = new ArrayList<String>();
+		ArrayList<String> strArr = new ArrayList<String>();
 		
 		while(matcher.find()){
 			strArr.add(matcher.group());
@@ -30,7 +28,8 @@ public class AnalyzeTrace {
 		return strArr;
 	}
 	
-	public String CompareIps(ArrayList<String> strArr){
+	private static String CompareIps(ArrayList<String> strArr){
+		String result = "";
 		LoadFirewall fw = new LoadFirewall();
 		HashMap<String, String> ipMap = fw.GetMap();
 
