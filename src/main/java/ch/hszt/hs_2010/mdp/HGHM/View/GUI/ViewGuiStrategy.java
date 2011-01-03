@@ -193,8 +193,12 @@ public class ViewGuiStrategy implements IViewStrategy{
         }
     }
     
+    /**
+     * Shows Matching ip in a JOptionPane window
+     * @param string
+     */
     public void showResult(String string){
-    	JOptionPane.showMessageDialog(null, string, "Test Titel", JOptionPane.OK_CANCEL_OPTION);
+    	JOptionPane.showMessageDialog(null, string, "Matching Ip's", JOptionPane.OK_CANCEL_OPTION);
     }
     
 	/**

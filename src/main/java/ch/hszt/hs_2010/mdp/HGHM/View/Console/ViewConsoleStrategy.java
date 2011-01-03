@@ -107,12 +107,19 @@ public class ViewConsoleStrategy implements IViewStrategy{
 		}
 	}
 	
+	/**
+	 * Shows Traceroute response in console
+	 * @param newTraceAnalyzeResponse
+	 */
 	private void showAnalyzeTraceResponse(String newTraceAnalyzeResponse) {
 		System.out.println("Tracerout analyze result:");
 		System.out.println(newTraceAnalyzeResponse);
 		System.out.println("Finished analyzing tracerout");
 	}
 
+	/**
+	 * Shows analyze trace in console
+	 */
 	private void showAnalyzeTrace() {
 		System.out.println("Start analyzing tracerout");
 	}

@@ -84,6 +84,10 @@ public class Model extends AbstractModel {
 		firePropertyChange(Controller.RESPONSE_TRACEROUTE_PROPERTY, oldTraceRoute, traceRouteString);
 	}
 	
+	/**
+	 * Fire property with an hash map of matching Ips
+	 * @param hmIp Hashmap of Matching ip's with string ip as key and description as Value
+	 */
 	private void showMatchIp(HashMap<String, String> hmIp)
 	{
 		HashMap<String, String> oldMatchIp = this.matchIp;
@@ -91,6 +95,10 @@ public class Model extends AbstractModel {
 		firePropertyChange(Controller.RESPONSE_MATCHIP_PROPERTY, oldMatchIp, this.matchIp);
 	}
 	
+	/**
+	 * Fire Match ip request
+	 * call showMatch after
+	 */
 	public void setMatchIpRequest()
 	{
 		firePropertyChange(Controller.REQUEST_MATCHIP_PROPERTY, false, true);
@@ -98,6 +106,11 @@ public class Model extends AbstractModel {
 		showMatchIp(new HashMap<String, String>());
 	}
 	
+	/**
+	 * Fire analyze trace request
+	 * call analyze trace response after
+	 * @param analyzeTraceRequest
+	 */
 	public void setAnalyzeTraceRequest(java.lang.Boolean analyzeTraceRequest)
 	{
 		boolean oldAnalyzeTraceRequest = this.analyzeTraceRequest;
@@ -107,6 +120,9 @@ public class Model extends AbstractModel {
 		setAnalyzeTraceResponse();
 	}
 	
+	/**
+	 * Fire analyze trace response
+	 */
 	public void setAnalyzeTraceResponse()
 	{
 		String oldAnalyzeResult = this.analyzedTraceResult;
@@ -114,6 +130,4 @@ public class Model extends AbstractModel {
 		firePropertyChange(Controller.RESPONSE_ANALYZETRACE_PROPERTY, oldAnalyzeResult, this.analyzedTraceResult);
 	}
 	
-//	AnalyzeTrace analyzeTrace = new AnalyzeTrace();
-//	this.showResult(analyzeTrace.Analyze(taTraceField.getText()));
 }
