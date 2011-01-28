@@ -187,6 +187,7 @@ public class ViewGuiStrategy implements IViewStrategy{
 	 */
     private void btnAnalyzeTraceActionPerformed(java.awt.event.ActionEvent evt) {
         try {
+        	getTraceRoute();
         	controller.requestTraceAnalyze();
         } catch (Exception e) {
             //  Handle exception ...... NOT!!
@@ -314,8 +315,25 @@ public class ViewGuiStrategy implements IViewStrategy{
 				showResult(newAnalyzeTraceResponse);
 			}
 		}
+		else if 
+			(evt.getPropertyName().equals(
+	  			Controller.GET_TRACEROUTE_PROPERTY)) {
+			boolean newBoolValue = ((java.lang.Boolean)(evt.getNewValue()));
+			if (newBoolValue)
+			{
+				getTraceRoute();
+			}
+		}
+		
 		//Further vars will be handled here
 		//else if ....
+	}
+	
+	/**
+	 * get TraceRoute
+	 */
+	private void getTraceRoute(){
+		controller.responseTraceRoute(taTraceField.getText());
 	}
 
 	/**

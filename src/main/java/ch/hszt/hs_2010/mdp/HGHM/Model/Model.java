@@ -16,7 +16,7 @@ public class Model extends AbstractModel {
 	private HashMap<String, String> matchIp;
 	private boolean quitRequest = false;
 	private boolean startTraceRequest = false;
-	private boolean analyzeTraceRequest = false;
+//	private boolean analyzeTraceRequest = false;
 	private String traceRouteString = "";
 	private String analyzedTraceResult = ""; 
 
@@ -66,21 +66,21 @@ public class Model extends AbstractModel {
 	 */
 	public void setStartTraceRequest(java.lang.Boolean startTraceRequest)
 	{
-		boolean oldStartTraceRequest = this.startTraceRequest;
-		this.startTraceRequest = startTraceRequest;
-		firePropertyChange(Controller.REQUEST_TRACEROUTE_PROPERTY, oldStartTraceRequest, this.startTraceRequest);
+		//boolean oldStartTraceRequest = this.startTraceRequest;
+		//this.startTraceRequest = startTraceRequest;
+		firePropertyChange(Controller.REQUEST_TRACEROUTE_PROPERTY, false, true);
 		//starting Traceroute
-		setTraceRouteResponse();
+		setTraceRouteResponse(Common.DEFAULT_TRACEROUTE);
 	}
 	
 	/**
 	 * Set a start trace request 
 	 * @param startTraceRequest
 	 */
-	public void setTraceRouteResponse()
+	public void setTraceRouteResponse(String newTraceRoute)
 	{
 		String oldTraceRoute = this.traceRouteString;
-		traceRouteString = Common.DEFAULT_TRACEROUTE;
+		traceRouteString = newTraceRoute;
 		firePropertyChange(Controller.RESPONSE_TRACEROUTE_PROPERTY, oldTraceRoute, traceRouteString);
 	}
 	
@@ -113,9 +113,9 @@ public class Model extends AbstractModel {
 	 */
 	public void setAnalyzeTraceRequest(java.lang.Boolean analyzeTraceRequest)
 	{
-		boolean oldAnalyzeTraceRequest = this.analyzeTraceRequest;
-		this.analyzeTraceRequest = analyzeTraceRequest;
-		firePropertyChange(Controller.REQUEST_ANALYZETRACE_PROPERTY, oldAnalyzeTraceRequest, this.analyzeTraceRequest);
+//		boolean oldAnalyzeTraceRequest = this.analyzeTraceRequest;
+//		this.analyzeTraceRequest = analyzeTraceRequest;
+		firePropertyChange(Controller.REQUEST_ANALYZETRACE_PROPERTY, false, true);
 		//starting Traceroute
 		setAnalyzeTraceResponse();
 	}
@@ -128,6 +128,7 @@ public class Model extends AbstractModel {
 		String oldAnalyzeResult = this.analyzedTraceResult;
 		this.analyzedTraceResult = AnalyzeTrace.Analyze(traceRouteString);
 		firePropertyChange(Controller.RESPONSE_ANALYZETRACE_PROPERTY, oldAnalyzeResult, this.analyzedTraceResult);
+		firePropertyChange(Controller.END_ANALYZETRACE_PROPERTY, false, true);
 	}
 	
 }

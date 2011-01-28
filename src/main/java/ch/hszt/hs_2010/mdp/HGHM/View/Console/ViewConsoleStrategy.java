@@ -10,7 +10,7 @@ import main.java.ch.hszt.hs_2010.mdp.HGHM.View.IViewStrategy;
 /**
  * Console view class which implements the interface IViewStrategy. 
  * This class is added in the ViewStrategyFactory. 
- * Hanldles the usability in the controller
+ * Handles the usability in the controller
  * @author david
  */
 public class ViewConsoleStrategy implements IViewStrategy{
@@ -105,6 +105,15 @@ public class ViewConsoleStrategy implements IViewStrategy{
 				showAnalyzeTraceResponse(newTraceAnalyzeResponse);
 			}
 		}
+		else if 
+		(evt.getPropertyName().equals(
+  			Controller.END_ANALYZETRACE_PROPERTY)) {
+			boolean traceAnalyzeEnd = ((java.lang.Boolean)(evt.getNewValue()));
+			if (traceAnalyzeEnd)
+			{
+				showEndAnalyzeTrace();
+			}
+		}
 	}
 	
 	/**
@@ -114,21 +123,20 @@ public class ViewConsoleStrategy implements IViewStrategy{
 	private void showAnalyzeTraceResponse(String newTraceAnalyzeResponse) {
 		System.out.println("Tracerout analyze result:");
 		System.out.println(newTraceAnalyzeResponse);
-		System.out.println("Finished analyzing tracerout");
 	}
 
 	/**
 	 * Shows analyze trace in console
 	 */
 	private void showAnalyzeTrace() {
-		System.out.println("Start analyzing tracerout");
+		System.out.println("Start analyzing trace rout");
 	}
 
 	/**
 	 * Shows trace route response
 	 */
 	private void showTraceResponse() {
-		System.out.println("Trace route sequence finished");
+		System.out.println("Loading new trace route sequence finished");
 	}
 
 	/**
@@ -136,6 +144,13 @@ public class ViewConsoleStrategy implements IViewStrategy{
 	 */
 	private void showStartTrace() {
 		System.out.println("Starting trace route sequence ...");
+	}
+	
+	/**
+	 * Shows end trace sequence
+	 */
+	private void showEndAnalyzeTrace() {
+		System.out.println("Trace route analyzing finished");
 	}
 
 	/**

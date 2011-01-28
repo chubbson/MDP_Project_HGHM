@@ -17,7 +17,9 @@ public class Controller extends AbstractController {
 	public static final String RESPONSE_MATCHIP_PROPERTY = "MatchIpResponse";
 	public static final String REQUEST_MATCHIP_PROPERTY = "MatchIpRequest";
 	public static final String REQUEST_ANALYZETRACE_PROPERTY = "AnalyzeTraceRequest";
+	public static final String END_ANALYZETRACE_PROPERTY = "AnalyzeTraceEnd";
 	public static final String RESPONSE_ANALYZETRACE_PROPERTY = "AnalyzeTraceResponse";
+	public static final String GET_TRACEROUTE_PROPERTY = "TraceRouteRequest";
 	
 	/**
      * Change the element hostIp value in the model
@@ -42,11 +44,26 @@ public class Controller extends AbstractController {
     {
     	setModelProperty(REQUEST_TRACEROUTE_PROPERTY, true);
     }
+    
+    /**
+     * Traceroute response
+     */
+    public void responseTraceRoute(String newTraceRoute)
+    {
+    	setModelProperty(RESPONSE_TRACEROUTE_PROPERTY, newTraceRoute);
+    }
 
     /**
      * starting analyze trace request
      */
 	public void requestTraceAnalyze() {
 		setModelProperty(REQUEST_ANALYZETRACE_PROPERTY, true);
+	}
+
+    /**
+     * response of requested trace route
+     */
+	public void responseTraceAnalyze() {
+		setModelProperty(RESPONSE_TRACEROUTE_PROPERTY, true);
 	}
 }
